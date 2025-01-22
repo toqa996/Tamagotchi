@@ -1,35 +1,84 @@
-const happinessElement = document.getElementById('happiness');
-    const hungerElement = document.getElementById('hunger');
-    const energyElement = document.getElementById('energy');
+let food = 100, sleep = 100, play = 100;
+const foodDecay = 7, sleepDecay = 10, playDecay = 5;
+const catImage = document.getElementById('cat-image');
+const message = document.getElementById('message');
+const backgroundMusic = document.getElementById('background-music');
+const feedButton = document.getElementById('feed-button');
+const sleepButton = document.getElementById('sleep-button');
+const playButton = document.getElementById('play-button');
 
-    let happiness = 70;
-    let hunger = 70;
-    let energy = 70;
+backgroundMusic.play();
 
-    function countdown() {
-        if (happiness > 0)happiness -= 6;
-        if (hunger > 0) hunger -= 4;
-        if (energy > 0) energy -= 2;
+function disableButtons() {
+    feedButton.disabled = true;
+    sleepButton.disabled = true;
+    playButton.disabled = true;
+    feedButton.classList.add('disabled');
+    sleepButton.classList.add('disabled');
+    playButton.classList.add('disabled');
+}
 
-        happiness = Math.max(0, happiness);
-        hunger = Math.max(0, hunger);
-        energy = Math.max(0, energy);
-       
-
-        happinessElement.textContent = happiness;
-        hungerElement.textContent = hunger;
-        energyElement.textContent = energy;
-
-        if (happiness === 0 && hunger === 0 && energy === 0) {
-           
-            clearInterval(countdown); 
-        }
-        
-    } setInterval(countdown, 100);
-
-    function showText(){
-        if (happiness < 70 ){
-            document.write("Your pet is sad");
-        }
-
+function updateStats() {
+    document.getElementById('food').textContent = food;
+    document.getElementById('sleep').textContent = sleep;
+    document.getElementById('play').textContent = play;
+    
+    if (food === 0 || sleep === 0 || play === 0) {
+        catImage.src = 'dead-cat.jpg';
+        message.textContent = 'The cat has died. Game over.';
+        disableButtons();
+        clearInterval(gameLoop);
+        return;
     }
+    if (food < 30 || sleep < 30 || play < 30) {
+        catImage.src = 'angry-cat.jpg';
+        message.textContent = 'The cat is angry and needs immediate attention!';
+    } else if (food < 70 || sleep < 70 || play < 70) {
+        if (food <= sleep && food <= play) {
+            catImage.src = 'hungry-cat.jpg';
+            message.textContent = 'The cat is hungry!';
+        } else if (sleep <= food && sleep <= play) {
+            catImage.src = 'sleepy-cat.jpg';
+            message.textContent = 'The cat is sleepy!';
+        } else {
+            catImage.src = 'bored-cat.jpg';
+            message.textContent = 'The cat is bored!';
+        }
+    } else if (food >= 90 && sleep >= 90 && play >= 90) {
+        catImage.src = 'happy-cat.jpg';
+        message.textContent = 'The cat is very happy!';
+    } else {
+        catImage.src = 'normal-cat.jpg';
+        message.textContent = 'The cat is feeling okay.';
+    }
+}
+
+function feedCat() {
+    food = Math.min(food + 10, 100);
+    updateStats();
+}
+
+function putToSleep() {
+    sleep = Math.min(sleep + 15, 100);
+    updateStats();
+}
+
+function playWithCat() {
+    play = Math.min(play + 5, 100);
+    updateStats();
+}
+
+function toggleMusic() {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+    }
+}
+
+const gameLoop = setInterval(() => {
+    food -= foodDecay;
+    sleep -= sleepDecay;
+    play -= playDecay;
+    updateStats();
+}, 1000);
