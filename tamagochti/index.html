@@ -11,24 +11,25 @@
     <header class="header">
         <h1>Tamagochti</h1>
     </header>
-    
-    <main class="main-container" id="text">
+    <main class="main-container">
         <div class="side-photo">
-            <img src="photo/smilecat.png" alt="smilecat" width="200px">
+            <img id="cat-image" src="photo/mid-health.png" alt="smilecat" width="200px">
         </div>
         <div class="side-up">
-            <p>Happiness: <span id="happiness">70</span></p>
-            <p>Hunger: <span id="hunger">70</span></p>
-            <p>Energy: <span id="energy">70</span></p>
+            <p>Food: <span id="food">70</span></p>
+            <p>Sleep: <span id="sleep">70</span></p>
+            <p>Play: <span id="play">70</span></p>
         </div>
         <div class="side-down">
-            <img src="photo/fish.png" alt="Tamagochti" >
-            <img src="photo/sleep.png" alt="Tamagochti">
-            <img src="photo/ball.png" alt="Tamagochti">
+            <img src="photo/food.png" alt="Tamagochti" onclick="feedCat()">
+            <img src="photo/sleep.png" alt="Tamagochti" onclick="putToSleep()">
+            <img src="photo/play.png" alt="Tamagochti" onclick="playWithCat()">
         </div>
+        <p id="message" class="text">The cat is very happy!</p>
         <audio id="background-music" autoplay loop>
             <source src="rond.mp3" type="audio/mp3">
         </audio>
+        <button class="Button" onclick="toggleMusic()">Mute/Unmute Music</button>
     </main>
     <script src="script.js"></script>
 </body>
