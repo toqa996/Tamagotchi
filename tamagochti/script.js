@@ -1,6 +1,6 @@
 let food = 100, sleep = 100, play = 100;
 const foodDecay = 7, sleepDecay = 10, playDecay = 5;
-const catImage = document.getElementById('cat-image');
+const catImage = document.getElementById('side-photo');
 const message = document.getElementById('message');
 const backgroundMusic = document.getElementById('background-music');
 const feedButton = document.getElementById('feed-button');
