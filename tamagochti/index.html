@@ -13,16 +13,22 @@
     </header>
     <main class="main-container">
         <div class="side-photo">
+            <img id="cat-image" src="photo/max-health.png" alt="Cat">
         </div>
         <div class="side-up">
-            <p>Food: <span id="food">70</span></p>
-            <p>Sleep: <span id="sleep">70</span></p>
-            <p>Play: <span id="play">70</span></p>
+            <p>Food: <span id="food">100</span></p>
+            <p>Sleep: <span id="sleep">100</span></p>
+            <p>Play: <span id="play">100</span></p>
         </div>
         <div class="side-down">
-            <img src="photo/food.png" alt="Tamagochti" onclick="feedCat()">
-            <img src="photo/sleep.png" alt="Tamagochti" onclick="putToSleep()">
-            <img src="photo/play.png" alt="Tamagochti" onclick="playWithCat()">
+            <button id="feed-button" class="button" onclick="feedCat()">
+                <img src="photo/food.png" alt="Tamagochti"></button>
+            <button id="sleep-button" class="button" onclick="putToSleep()">
+                <img src="photo/sleep.png" alt="Tamagochti">
+            </button>
+            <button id="play-button" class="button" onclick="playWithCat()">
+                <img src="photo/play.png" alt="Tamagochti">
+            </button>
         </div>
         <p id="message" class="text">The cat is very happy!</p>
         <audio id="background-music" autoplay loop>
