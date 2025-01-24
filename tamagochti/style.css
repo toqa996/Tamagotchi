@@ -58,4 +58,7 @@ background-color: rgba(74, 21, 21, 0.532);
  .Button{
     text-align: center;
     padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(74, 21, 21, 0.532);
  }
