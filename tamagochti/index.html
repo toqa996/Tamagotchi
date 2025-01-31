@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Tamagochti</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,6 +11,7 @@
     
     <header class="header">
         <h1>Tamagochti</h1>
+        <button class="Button" onclick="toggleMusic()"><i id="volume-icon" class="fa-solid fa-volume-xmark"></i></button>
     </header>
     <main class="main-container">
         <div class="side-photo">
@@ -34,7 +36,7 @@
         <audio id="background-music" autoplay loop>
             <source src="photo/rond.mp3" type="audio/mp3">
         </audio>
-        <button class="Button" onclick="toggleMusic()">Mute/Unmute Music</button>
+        
     </main>
     <script src="script.js"></script>
 </body>
