@@ -87,3 +87,20 @@ const gameLoop = setInterval(() => {
     play -= playDecay;
     updateStats();
 }, 1000);
+
+// Dark mode
+const darkModeButton = document.getElementById('dark-mode');
+     let isDarkMode = false;
+
+     function myFunction() {
+        isDarkMode = !isDarkMode;
+         if (isDarkMode) {
+             document.body.classList.add('dark-mode');
+             darkModeButton.innerHTML = '<i class="fas fa-sun"></i>';
+             isDarkMode = true;
+         } else {
+             document.body.classList.remove('dark-mode');
+             darkModeButton.innerHTML = '<i class="fas fa-moon"></i>';
+             isDarkMode = false;
+         }
+     }
