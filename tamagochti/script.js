@@ -72,12 +72,12 @@ function toggleMusic() {
     var icon = document.getElementById('volume-icon');
     if (backgroundMusic.paused) {
         backgroundMusic.play();
-        icon.classList.remove('fa-volume-xmark');
-        icon.classList.add('fa-volume-high');
+        icon.classList.remove('fa-regular', 'fa-circle');
+        icon.classList.add('fa-regular', 'fa-x');
     } else {
         backgroundMusic.pause();
-        icon.classList.remove('fa-volume-high'); 
-        icon.classList.add('fa-volume-xmark');
+        icon.classList.remove('fa-regular', 'fa-x'); 
+        icon.classList.add('fa-regular', 'fa-circle');
     }
 }
 
