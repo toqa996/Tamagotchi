@@ -72,12 +72,12 @@ function toggleMusic() {
     var icon = document.getElementById('volume-icon');
     if (backgroundMusic.paused) {
         backgroundMusic.play();
-        icon.classList.remove('fa-volume-xmark');
-        icon.classList.add('fa-volume-high');
+        icon.classList.remove('fa-regular', 'fa-circle');
+        icon.classList.add('fa-regular', 'fa-x');
     } else {
         backgroundMusic.pause();
-        icon.classList.remove('fa-volume-high'); 
-        icon.classList.add('fa-volume-xmark');
+        icon.classList.remove('fa-regular', 'fa-x'); 
+        icon.classList.add('fa-regular', 'fa-circle');
     }
 }
 
@@ -87,3 +87,20 @@ const gameLoop = setInterval(() => {
     play -= playDecay;
     updateStats();
 }, 1000);
+
+// Dark mode
+const darkModeButton = document.getElementById('dark-mode');
+     let isDarkMode = false;
+
+     function myFunction() {
+        isDarkMode = !isDarkMode;
+         if (isDarkMode) {
+             document.body.classList.add('dark-mode');
+             darkModeButton.innerHTML = '<i class="fas fa-sun"></i>';
+             isDarkMode = true;
+         } else {
+             document.body.classList.remove('dark-mode');
+             darkModeButton.innerHTML = '<i class="fas fa-moon"></i>';
+             isDarkMode = false;
+         }
+     }
