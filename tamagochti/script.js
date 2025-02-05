@@ -74,10 +74,12 @@ function toggleMusic() {
         backgroundMusic.play();
         icon.classList.remove('fa-regular', 'fa-circle');
         icon.classList.add('fa-regular', 'fa-x');
+        icon.classList.style.color = '#28a745';
     } else {
         backgroundMusic.pause();
         icon.classList.remove('fa-regular', 'fa-x'); 
         icon.classList.add('fa-regular', 'fa-circle');
+        icon.classList.style.color = '#dc3545';
     }
 }
 

@@ -71,7 +71,7 @@ color: white;
  .Button{
     text-align: center;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 35px;
     border: none;
     background-color:  #3a9b6d;
     color: white;
@@ -89,7 +89,7 @@ color: white;
     background-color:  #3a9b6d;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 35px;
     padding: 10px ;
     position: absolute;
     top: 20px;
@@ -102,4 +102,10 @@ color: white;
 }
 body.dark-mode .header {
     background-color: #d92c2f;
+}
+body.dark-mode .main-container {
+    background-color:#d92c2f;
+}
+body.dark-mode .side-up p{
+    background-color: black;
 }
