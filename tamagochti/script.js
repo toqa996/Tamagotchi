@@ -31,7 +31,7 @@ function updateStats() {
         return;
     }
     if (food < 30 || sleep < 30 || play < 30) {
-        catImage.src = 'photo/demon.jpg';
+        catImage.src = 'photo/demon.png';
         message.textContent = 'The cat is angry and needs immediate attention!';
     } else if (food < 70 || sleep < 70 || play < 70) {
         if (food <= sleep && food <= play) {
