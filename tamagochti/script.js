@@ -25,31 +25,31 @@ function updateStats() {
     
     if (food <= 0 || sleep <= 0 || play <= 0) {
         catImage.src = 'photo/dead.png';
-        message.textContent = 'The cat has died. Game over.';
+        message.textContent = 'Meowji456 has died. Game over.';
         disableButtons();
         clearInterval(gameLoop);
         return;
     }
     if (food < 30 || sleep < 30 || play < 30) {
         catImage.src = 'photo/demon.png';
-        message.textContent = 'The cat is angry and needs immediate attention!';
+        message.textContent = 'Meowji456 is angry and needs immediate attention!';
     } else if (food < 70 || sleep < 70 || play < 70) {
         if (food <= sleep && food <= play) {
             catImage.src = 'photo/hungry.png';
-            message.textContent = 'The cat is hungry!';
+            message.textContent = 'Meowji456 is hungry!';
         } else if (sleep <= food && sleep <= play) {
             catImage.src = 'photo/sleepy.png';
-            message.textContent = 'The cat is sleepy!';
+            message.textContent = 'Meowji456 is sleepy!';
         } else {
             catImage.src = 'photo/bored.png';
-            message.textContent = 'The cat is bored!';
+            message.textContent = 'Meowji456 is bored!';
         }
     } else if (food >= 90 && sleep >= 90 && play >= 90) {
         catImage.src = 'photo/max-health.png';
-        message.textContent = 'The cat is very happy!';
+        message.textContent = 'Meowji456 is very happy!';
     } else {
         catImage.src = 'photo/mid-health.png';
-        message.textContent = 'The cat is feeling okay.';
+        message.textContent = 'Meowji456 is feeling okay.';
     }
 }
 
