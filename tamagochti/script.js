@@ -89,6 +89,7 @@ function toggleMusic() {
         icon.classList.add('fa-regular', 'fa-circle');
         button.style.backgroundColor = "#4169E1"; 
 }
+}
 
 const gameLoop = setInterval(() => {
     food -= foodDecay;
@@ -113,3 +114,4 @@ const darkModeButton = document.getElementById('dark-mode');
              isDarkMode = false;
          }
      }
+    
