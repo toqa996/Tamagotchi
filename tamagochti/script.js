@@ -70,17 +70,24 @@ function playWithCat() {
 
 function toggleMusic() {
     var icon = document.getElementById('volume-icon');
+    var button = document.getElementById('music-mode'); 
+    var backgroundMusic = document.getElementById('background-music'); 
+
+    if (!backgroundMusic) {
+        console.error("Element with ID 'background-music' not found!");
+        return;
+    }
+
     if (backgroundMusic.paused) {
         backgroundMusic.play();
         icon.classList.remove('fa-regular', 'fa-circle');
         icon.classList.add('fa-regular', 'fa-x');
-        icon.classList.style.color = '#28a745';
+        button.style.backgroundColor = "#DC3545"; 
     } else {
         backgroundMusic.pause();
-        icon.classList.remove('fa-regular', 'fa-x'); 
+        icon.classList.remove('fa-regular', 'fa-x');
         icon.classList.add('fa-regular', 'fa-circle');
-        icon.classList.style.color = '#dc3545';
-    }
+        button.style.backgroundColor = "#4169E1"; 
 }
 
 const gameLoop = setInterval(() => {
