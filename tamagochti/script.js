@@ -99,7 +99,7 @@ const gameLoop = setInterval(() => {
     sleep -= sleepDecay;
     play -= playDecay;
     updateStats();
-}, 1000);
+}, 5000);
 
 // Dark mode
 const darkModeButton = document.getElementById('dark-mode');
