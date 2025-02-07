@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="photo/logo.png">
 </head>
+
 <body>
-    
+
     <header class="header">
         <h1>Tamagotchi</h1>
-        <button class="Button" id="music-mode" onclick="toggleMusic()"><i id="volume-icon" class="fa-regular fa-circle"></i></button>
+        <button class="Button" id="music-mode" onclick="toggleMusic()"><i id="volume-icon"
+                class="fa-regular fa-circle"></i></button>
         <button id="dark-mode" class="dark-mode-button" onclick="myFunction()"><i class="fa-solid fa-moon"></i></button>
     </header>
     <main class="main-container">
@@ -26,20 +29,21 @@
             <p>Play: <span id="play">100</span></p>
         </div>
         <div class="side-down">
-            <button id="feed-button"  onclick="feedCat()">
+            <button id="feed-button" onclick="feedCat()">
                 <img src="photo/food.png" alt="Tamagochti"></button>
-            <button id="sleep-button"  onclick="putToSleep()">
+            <button id="sleep-button" onclick="putToSleep()">
                 <img src="photo/sleep.png" alt="Tamagochti">
             </button>
-            <button id="play-button"  onclick="playWithCat()">
+            <button id="play-button" onclick="playWithCat()">
                 <img src="photo/play.png" alt="Tamagochti">
             </button>
         </div>
         <audio id="background-music" loop>
             <source src="photo/rond.mp3" type="audio/mp3">
         </audio>
-        
+
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

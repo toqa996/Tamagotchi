@@ -24,7 +24,7 @@ function updateStats() {
     document.getElementById('food').textContent = food;
     document.getElementById('sleep').textContent = sleep;
     document.getElementById('play').textContent = play;
-    
+
     if (food <= 0 || sleep <= 0 || play <= 0) {
         catImage.src = 'photo/dead.png';
         message.textContent = 'Meowji456 has died. Game over.';
@@ -80,17 +80,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-function toggleMusic() { 
+function toggleMusic() {
 
 
     if (backgroundMusic.paused) {
         backgroundMusic.play();
         icon.classList.replace('fa-circle', 'fa-x');
-        button.style.backgroundColor = "#b6362b"; 
+        button.style.backgroundColor = "#b6362b";
     } else {
         backgroundMusic.pause();
         icon.classList.replace('fa-x', 'fa-circle');
-        button.style.backgroundColor = "#0363af"; 
+        button.style.backgroundColor = "#0363af";
     }
 }
 
@@ -103,18 +103,17 @@ const gameLoop = setInterval(() => {
 
 // Dark mode
 const darkModeButton = document.getElementById('dark-mode');
-     let isDarkMode = false;
+let isDarkMode = false;
 
-     function myFunction() {
-        isDarkMode = !isDarkMode;
-         if (isDarkMode) {
-             document.body.classList.add('dark-mode');
-             darkModeButton.innerHTML = '<i class="fas fa-sun"></i>';
-             isDarkMode = true;
-         } else {
-             document.body.classList.remove('dark-mode');
-             darkModeButton.innerHTML = '<i class="fas fa-moon"></i>';
-             isDarkMode = false;
-         }
-     }
-    
+function myFunction() {
+    isDarkMode = !isDarkMode;
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        darkModeButton.innerHTML = '<i class="fas fa-sun"></i>';
+        isDarkMode = true;
+    } else {
+        document.body.classList.remove('dark-mode');
+        darkModeButton.innerHTML = '<i class="fas fa-moon"></i>';
+        isDarkMode = false;
+    }
+}
