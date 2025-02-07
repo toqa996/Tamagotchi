@@ -6,24 +6,25 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color:rgb(255, 255, 255);
+    background-color: #f4feff;
 }
 
 .header{
 text-align: center;
 padding: 20px;
-background-color:#f6c9d6;
-color: white;
+background-color: #007b83;
+color: #f4feff;
 }
+
 
 .main-container{
     margin: 20px auto;
     padding: 20px;
-    background-color: #f6c9d6;
-    border: 2px solid #ddd;
-    border-radius: 300px;
+    background-color: #007b83;
+    border-radius: 200px;
     max-width: 1000px;
     box-shadow: 0 4px 8pxrgb(56, 56, 56);
+    justify-content: center;
 
 
 }
@@ -33,17 +34,27 @@ color: white;
 }
 
 #cat-image{
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     
 }
+
+.text{
+    text-align: center;
+    padding: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f4feff;
+    margin-top: 15px;
+    font-size: 30px;
+ }
 .side-up{
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 30px;
 }
 .side-up p{
-    background-color:rgb(227, 62, 109);
+    background-color: #014951;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -52,42 +63,45 @@ color: white;
 .side-down{
    display: flex;
    justify-content: space-around;
-   padding: 20px; 
+   padding: 20px;
+   margin-bottom: 20px;
 }
 
 
 .side-down img{
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     cursor: pointer;
+    background-color: #007b83;
 }
- .text{
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color:rgb(44, 133, 91);
- }
- .Button{
-    text-align: center;
+#feed-button, #sleep-button, #play-button{
+    background-color: #007b83;
+    border: none;
+    
+}
+
+.Button{
     padding: 10px;
     border-radius: 35px;
     border: none;
-    background-color: blue;
     color: white;
     position: absolute;
     top: 20px;
     right: 20px;
+    background-color: #0363af;
     
+ }
+ #volume-icon{
+    min-width: 15px; /* Set the same for both icons */
+    min-height: 15px; /* Set the same for both icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
  }
 
- #feed-button, #play-button, #sleep-button{
-    border: none;
-    border-radius: 15px;
-    
- }
  .dark-mode-button {
-    background-color:  #3a9b6d;
+    background-color:  #0c0904;
     color: white;
     border: none;
     border-radius: 35px;
@@ -98,15 +112,31 @@ color: white;
    
 }
 
- body.dark-mode {
-    background-color: black;
+body.dark-mode {
+    background-color: #0a1819;
 }
 body.dark-mode .header {
-    background-color:rgb(59, 54, 220);
+    background-color: #d52967;
+}
+body.dark-mode .header h1{
+    color:  #0a1819;
 }
 body.dark-mode .main-container {
-    background-color:#d92c2f;
+    background-color: #d52967;
 }
 body.dark-mode .side-up p{
-    background-color: black;
+    background-color: #0a1819;
+}
+body.dark-mode .side-down img{
+    background-color: #d52967;
+}
+body.dark-mode #feed-button, body.dark-mode #sleep-button, body.dark-mode #play-button{
+    background-color: #d52967;
+}
+body.dark-mode .dark-mode-button{
+    background-color: #f1a514;
+}
+body.dark-mode .text{
+    color: #0a1819;
+    
 }

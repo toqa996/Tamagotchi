@@ -3,6 +3,8 @@ const foodDecay = 7, sleepDecay = 10, playDecay = 5;
 const catImage = document.getElementById('cat-image');
 const message = document.getElementById('message');
 const backgroundMusic = document.getElementById('background-music');
+const icon = document.getElementById('volume-icon');
+const button = document.getElementById('music-mode');
 const feedButton = document.getElementById('feed-button');
 const sleepButton = document.getElementById('sleep-button');
 const playButton = document.getElementById('play-button');
@@ -68,27 +70,28 @@ function playWithCat() {
     updateStats();
 }
 
-function toggleMusic() {
-    var icon = document.getElementById('volume-icon');
-    var button = document.getElementById('music-mode'); 
-    var backgroundMusic = document.getElementById('background-music'); 
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (!backgroundMusic) {
-        console.error("Element with ID 'background-music' not found!");
-        return;
-    }
+    // Try to play audio on page load (some browsers may block it)
+    backgroundMusic.play().catch(error => {
+        console.log("Autoplay prevented:", error);
+    });
+});
+
+
+
+function toggleMusic() { 
+
 
     if (backgroundMusic.paused) {
         backgroundMusic.play();
-        icon.classList.remove('fa-regular', 'fa-circle');
-        icon.classList.add('fa-regular', 'fa-x');
-        button.style.backgroundColor = "#DC3545"; 
+        icon.classList.replace('fa-circle', 'fa-x');
+        button.style.backgroundColor = "#b6362b"; 
     } else {
         backgroundMusic.pause();
-        icon.classList.remove('fa-regular', 'fa-x');
-        icon.classList.add('fa-regular', 'fa-circle');
-        button.style.backgroundColor = "#4169E1"; 
-}
+        icon.classList.replace('fa-x', 'fa-circle');
+        button.style.backgroundColor = "#0363af"; 
+    }
 }
 
 const gameLoop = setInterval(() => {
